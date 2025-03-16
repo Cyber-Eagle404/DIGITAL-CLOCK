@@ -21,7 +21,7 @@ body {
 }
 
 #welcome {
-    font-size: 2rem; /* Ukuran font diperkecil */
+    font-size: 1.9rem; /* Ukuran font diperkecil */
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
