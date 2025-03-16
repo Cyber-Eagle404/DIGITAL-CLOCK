@@ -4,24 +4,24 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #282828; /* Warna fallback */
-    background-image: url('eagle.png.jpg'); /* Gambar background */
-    background-size: cover; /* Agar gambar menutupi seluruh layar */
-    background-position: center; /* Posisi gambar di tengah */
-    color: #00ff00; /* Warna hijau neon */
+    background-color: #282828;
+    background-image: url('eagle.png.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
-    overflow: hidden; /* Agar tidak ada scroll */
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
 }
 
 #welcome {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Ukuran font diperkecil */
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -46,4 +46,5 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: 20px;
 }
