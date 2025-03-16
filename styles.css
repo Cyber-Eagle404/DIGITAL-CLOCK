@@ -20,6 +20,7 @@ body {
     border-radius: 10px;
     border: 2px solid #00ff00;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 #welcome {
@@ -30,6 +31,7 @@ body {
     letter-spacing: 2px;
     line-height: 1.2;
     color: #00ff00;
+    transition: all 0.3s ease;
 }
 
 #clock {
@@ -37,6 +39,7 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
     color: #00ff00;
+    transition: all 0.3s ease;
 }
 
 #date {
@@ -44,6 +47,7 @@ body {
     font-weight: bold;
     margin-bottom: 20px;
     color: #00ff00;
+    transition: all 0.3s ease;
 }
 
 #message {
@@ -53,6 +57,7 @@ body {
     letter-spacing: 1px;
     margin-top: 20px;
     color: #00ff00;
+    transition: all 0.3s ease;
 }
 
 /* Efek Glitch */
@@ -84,4 +89,25 @@ body {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+/* Gaya Tombol */
+#actionButton {
+    background-color: #000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Efek Hover pada Tombol */
+#actionButton:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
