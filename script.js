@@ -26,3 +26,33 @@ setInterval(updateTime, 1000);
 
 // Panggil fungsi pertama kali untuk menghindari delay
 updateTime();
+
+// Efek Klik pada Container
+document.querySelector('.container').addEventListener('click', function() {
+    this.style.backgroundColor = 'rgba(255, 0, 255, 0.3)';
+    this.style.boxShadow = '0 0 30px rgba(255, 0, 255, 0.5)';
+    setTimeout(() => {
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        this.style.boxShadow = '0 0 20px rgba(0, 255, 0, 0.5)';
+    }, 500);
+});
+
+// Efek Klik pada Tombol
+document.getElementById('actionButton').addEventListener('click', function() {
+    alert('SYSTEM ACTIVATED!');
+    this.style.backgroundColor = '#ff00ff';
+    this.style.boxShadow = '0 0 20px #ff00ff';
+    setTimeout(() => {
+        this.style.backgroundColor = '#000';
+        this.style.boxShadow = 'none';
+    }, 500);
+});
+
+// Efek Teks Berubah Saat Hover
+document.getElementById('welcome').addEventListener('mouseover', function() {
+    this.textContent = 'SYSTEM OVERRIDE...';
+});
+
+document.getElementById('welcome').addEventListener('mouseout', function() {
+    this.textContent = 'WELCOME... \nEAGLE 404 SYSTEM ACTIVED !!!';
+});
