@@ -5,20 +5,37 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #282828;
-    color: #00ff00;
+    color: #00ff00; /* Warna hijau */
     font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
 }
 
 .container {
     text-align: center;
 }
 
-#clock {
-    font-size: 3rem;
+#welcome {
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#clock {
+    font-size: 6rem; /* Ukuran font jam diperbesar */
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 #date {
     font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
