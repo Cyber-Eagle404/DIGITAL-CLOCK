@@ -58,7 +58,7 @@ const motivasi = [
   "Hanya mereka yang terus berjalan yang akan sampai.",
   "Hari ini adalah milikmu, gunakan sebaik mungkin.",
   "Api semangatmu tak akan padam!",
-  "Bangkit, melangkah, menaklukkan dunia!",
+  "Bangkit, melangkah, Taklukan dunia!",
   "Setiap detik adalah kesempatan untuk menjadi lebih baik.",
   "Semangatmu adalah bahan bakar kemenanganmu!",
   "Langit bukan batas, hanya titik awal!"
