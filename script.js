@@ -61,11 +61,17 @@ const motivasi = [
     "Hari ini adalah milikmu, gunakan sebaik mungkin."
 ];
 
+let lastIndex = -1;
+
 function tampilkanMotivasi() {
-    const acak = Math.floor(Math.random() * motivasi.length);
+    let acak;
+    do {
+        acak = Math.floor(Math.random() * motivasi.length);
+    } while (acak === lastIndex); // Hindari pengulangan
+    lastIndex = acak;
     document.getElementById('motivation').textContent = motivasi[acak];
 }
 
-// Tampilkan motivasi baru setiap 10 detik
 tampilkanMotivasi();
-setInterval(tampilkanMotivasi, 10000);
+setInterval(tampilkanMotivasi, 5000);
+
