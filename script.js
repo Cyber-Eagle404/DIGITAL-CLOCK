@@ -21,32 +21,35 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
-document.querySelector('.container').addEventListener('click', function() {
-    this.style.backgroundColor = 'rgba(255, 0, 255, 0.3)';
-    this.style.boxShadow = '0 0 30px rgba(255, 0, 255, 0.5)';
+// Efek Klik
+document.querySelector('.container').addEventListener('click', function () {
+    this.style.backgroundColor = 'rgba(255, 100, 0, 0.3)';
+    this.style.boxShadow = '0 0 30px rgba(255, 100, 0, 0.5)';
     setTimeout(() => {
-        this.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
-        this.style.boxShadow = '0 0 10px rgba(102, 255, 153, 0.3)';
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        this.style.boxShadow = '0 0 20px rgba(255, 102, 0, 0.5)';
     }, 500);
 });
 
-document.getElementById('actionButton').addEventListener('click', function() {
+document.getElementById('actionButton').addEventListener('click', function () {
     alert('SYSTEM ACTIVATED!');
-    this.style.backgroundColor = '#ff00ff';
-    this.style.boxShadow = '0 0 20px #ff00ff';
+    this.style.backgroundColor = '#ff3300';
+    this.style.boxShadow = '0 0 20px #ff3300';
     setTimeout(() => {
         this.style.backgroundColor = '#000';
         this.style.boxShadow = 'none';
     }, 500);
 });
 
-document.getElementById('welcome').addEventListener('mouseover', function() {
+// Hover Text
+document.getElementById('welcome').addEventListener('mouseover', function () {
     this.textContent = 'SYSTEM OVERRIDE...';
 });
-document.getElementById('welcome').addEventListener('mouseout', function() {
+document.getElementById('welcome').addEventListener('mouseout', function () {
     this.innerHTML = 'WELCOME... <br> EAGLE 404 SYSTEM ACTIVED !!!';
 });
 
+// Motivasi
 const motivasi = [
     "Kerja keras tidak akan mengkhianati hasil.",
     "Setiap hari adalah peluang baru.",
@@ -64,7 +67,7 @@ function tampilkanMotivasi() {
     let acak;
     do {
         acak = Math.floor(Math.random() * motivasi.length);
-    } while (acak === lastIndex);
+    } while (acak === lastIndex); // Hindari pengulangan
     lastIndex = acak;
     document.getElementById('motivation').textContent = motivasi[acak];
 }
