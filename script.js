@@ -49,33 +49,16 @@ document.getElementById('welcome').addEventListener('mouseout', function() {
 });
 
 const motivasi = [
-  "Kerja keras tidak akan mengkhianati hasil.",
-  "Setiap hari adalah peluang baru.",
-  "Jangan menyerah, keajaiban butuh waktu.",
-  "Fokus, kerja cerdas, dan doa.",
-  "Sukses dimulai dari keberanian mencoba.",
-  "Percaya pada proses!",
-  "Hanya mereka yang terus berjalan yang akan sampai.",
-  "Hari ini adalah milikmu, gunakan sebaik mungkin.",
-  "Api semangatmu tak akan padam!",
-  "Bangkit, melangkah, Taklukan dunia!",
-  "Setiap detik adalah kesempatan untuk menjadi lebih baik.",
-  "Semangatmu adalah bahan bakar kemenanganmu!",
-  "Langit bukan batas, hanya titik awal!",
-  "Jangan ngeluh hidup susah kalau usahamu segitu-gitu aja.",
-  "Orang lain sibuk cari peluang, kamu masih sibuk cari alasan.",
-  "Masa depanmu nggak akan berubah kalau kamu masih nyantai terus.",
-  "Rejeki emang di tangan Tuhan, tapi Tuhan nggak suka orang males.",
-  "Duit nggak datang dari doa doang. Gerak, goblok.",
-  "Mau kerja berat atau hidup berat? Pilih salah satu.",
-  "Miskin karena lahir itu bukan salahmu. Tapi miskin karena males? 100% salahmu.",
-  "Nggak ada yang bakal nyelametin hidup kamu selain kamu sendiri. Gerak atau tenggelam.",
-  "Pengen berubah tapi nunggu waktu yang pas? Waktu itu nggak pernah datang, bro.",
-  "Mau hidup tenang tapi nggak siap kerja keras? Selamat datang di dunia fantasi.",
-  "Kalau kamu terus-terusan hidup berdasarkan mood, siap-siap miskin secara konsisten.",
-  "Berani ngeluh, harusnya juga berani berubah. Kalau enggak, lo cuma pecundang yang berisik.",
-  "Kalau kamu nggak bisa tahan susahnya belajar dan kerja, siapin diri buat tahan pahitnya penyesalan.",
-  "Kamu nggak harus semangat setiap hari. Tapi kamu harus tetap jalan, setiap hari."
+  "Jangan takut badai, karena badai adalah jalan bagi elang untuk terbang lebih tinggi.",
+  "Elang tidak sibuk membuktikan dirinya ke ayam. Fokusmu bukan menjawab keraguan, tapi terbang lebih tinggi.",
+  "Terbanglah sendiri jika harus, asal tetap mendekati tujuanmu. Bukan keramaian yang menentukan nilai terbangmu.",
+  "Kadang kamu harus merelakan kenyamanan, mencabut 'paruh dan cakarmu' agar hidupmu bisa tumbuh kembali.",
+  "Kesabaran elang menanti mangsa adalah kekuatan. Bersabarlah, tapi tetap fokus dan siaga.",
+  "Elang tidak menengok ke samping saat menyasar mangsa. Fokus adalah kunci dari hasil yang tajam.",
+  "Jangan hanya jadi burung yang bersuara nyaring, jadilah elang yang diam namun mengguncang saat datang.",
+  "Kalau kamu ingin hasil luar biasa, jangan terbang dengan yang biasa-biasa saja.",
+  "Terkadang hidup mendorongmu keluar dari sarang bukan untuk menjatuhkan, tapi agar kamu belajar terbang.",
+  "Elang tak pernah khawatir badai datang — dia hanya menyiapkan sayap untuk naik lebih tinggi."
 ];
 
 let lastIndex = -1;
