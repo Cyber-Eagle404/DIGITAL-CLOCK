@@ -1,19 +1,105 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jam dan Tanggal Digital</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Clock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #0f0f0f;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffcc;
+    }
+
+    .clock {
+      font-size: 5rem;
+      text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+      transition: all 0.3s ease;
+    }
+
+    .date {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ccc;
+      text-shadow: 0 0 5px #888;
+    }
+
+    .format-toggle {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    .format-toggle:hover {
+      background: #00e6b3;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div id="welcome" class="glitch">WELCOME... <br>EAGLE 404 SYSTEM ACTIVED !!!</div>
-        <div id="clock" class="neon-text"></div>
-        <div id="date" class="neon-text"></div>
-        <div id="message" class="blinking-text">ENJOY YOUR WORK...</div>
-        <button id="actionButton">CLICK ME</button>
-    </div>
-    <script src="script.js"></script>
+
+  <div class="clock" id="clock">00:00:00</div>
+  <div class="date" id="date">Senin, 1 Januari 2025</div>
+  <button class="format-toggle" onclick="toggleFormat()">Format: 24 Jam</button>
+
+  <script>
+    let is24Hour = true;
+
+    function updateClock() {
+      const now = new Date();
+
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      const day = now.getDay();
+      const date = now.getDate();
+      const month = now.getMonth();
+      const year = now.getFullYear();
+
+      const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+      const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+      let ampm = '';
+      if (!is24Hour) {
+        ampm = hours >= 12 ? ' PM' : ' AM';
+        hours = hours % 12 || 12;
+      }
+
+      const formattedTime = [
+        hours.toString().padStart(2, '0'),
+        minutes.toString().padStart(2, '0'),
+        seconds.toString().padStart(2, '0')
+      ].join(':') + ampm;
+
+      document.getElementById('clock').textContent = formattedTime;
+      document.getElementById('date').textContent = `${days[day]}, ${date} ${months[month]} ${year}`;
+    }
+
+    function toggleFormat() {
+      is24Hour = !is24Hour;
+      document.querySelector('.format-toggle').textContent = `Format: ${is24Hour ? '24 Jam' : '12 Jam'}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
 </body>
 </html>
