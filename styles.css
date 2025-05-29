@@ -8,7 +8,7 @@ body {
     background-image: url('eagle.png.jpg');
     background-size: cover;
     background-position: center;
-    color: #66ff99;
+    color: #f0f0f0;
     font-family: 'Courier New', Courier, monospace;
     overflow: hidden;
 }
@@ -18,8 +18,8 @@ body {
     background-color: rgba(0, 0, 0, 0.75);
     padding: 40px;
     border-radius: 10px;
-    border: 2px solid #66ff99;
-    box-shadow: 0 0 10px rgba(102, 255, 153, 0.3);
+    border: 2px solid #ff9933;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.7);
     transition: all 0.3s ease;
 }
 
@@ -30,8 +30,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1.2;
-    color: #66ff99;
-    text-shadow: 0 0 3px #66ff99;
+    color: #ffcc66;
     transition: all 0.3s ease;
 }
 
@@ -46,18 +45,16 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #66ff99;
-    text-shadow: 0 0 3px #66ff99;
+    color: #ffffff;
     transition: all 0.3s ease;
 }
 
+/* Motivasi */
 #motivation {
     margin-top: 10px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     font-style: italic;
-    color: #66ff99;
-    text-shadow: 0 0 3px #66ff99;
     transition: all 0.5s ease-in-out;
 }
 
@@ -68,44 +65,15 @@ body {
 
 @keyframes glitch {
     0% { transform: translate(0); }
-    20% { transform: translate(-1px, 1px); }
-    40% { transform: translate(1px, -1px); }
-    60% { transform: translate(-1px, 1px); }
-    80% { transform: translate(1px, -1px); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, 2px); }
+    80% { transform: translate(2px, -2px); }
     100% { transform: translate(0); }
 }
 
 .neon-text {
-    text-shadow: 0 0 4px #66ff99;
-}
-
-.blinking-text {
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-#actionButton {
-    background-color: #000;
-    color: #66ff99;
-    border: 2px solid #66ff99;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-family: 'Courier New', Courier, monospace;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-#actionButton:hover {
-    background-color: #66ff99;
-    color: #000;
-    box-shadow: 0 0 10px #66ff99;
+    text-shadow: 0 0 5px #ff6600, 0 0 10px #ff3300, 0 0 20px #ff0000;
 }
 
 /* Efek Api */
@@ -145,4 +113,23 @@ body {
             0 0 32px #ff3300;
         transform: translateY(0);
     }
+}
+
+#actionButton {
+    background-color: #000;
+    color: #ff9933;
+    border: 2px solid #ff9933;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+#actionButton:hover {
+    background-color: #ff9933;
+    color: #000;
+    box-shadow: 0 0 10px #ff6600, 0 0 20px #ff3300;
 }
