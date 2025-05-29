@@ -90,4 +90,4 @@ function tampilkanMotivasi() {
 }
 
 tampilkanMotivasi();
-setInterval(tampilkanMotivasi, 5000);
+setInterval(tampilkanMotivasi, 10000);
