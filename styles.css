@@ -17,14 +17,14 @@ body {
 
 .container {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.85); /* lebih solid, tidak terlalu transparan */
+  background-color: rgba(0, 0, 0, 0.85);
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #00ffcc;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
   transition: all 0.3s ease;
   max-width: 90vw;
-  backdrop-filter: blur(1px); /* dari blur(5px) ke blur(1px) agar tidak merusak latar */
+  backdrop-filter: blur(1px);
 }
 
 #welcome {
@@ -54,18 +54,32 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Efek ketik dan glow pada motivasi */
 #motivation {
-  margin-top: 20px;
+  font-family: 'Courier New', monospace;
   font-size: 1.2rem;
   font-weight: bold;
   font-style: italic;
-  color: #ffffff;
+  color: #00ffcc;
+  border-left: 2px solid #00ffcc;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  padding-left: 10px;
+  animation: caret-blink 1s step-start infinite;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
   transition: all 0.5s ease-in-out;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
+@keyframes caret-blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Efek glitch */
 .glitch {
   position: relative;
   animation: glitch 2s infinite;
@@ -80,10 +94,12 @@ body {
   100% { transform: translate(0); }
 }
 
+/* Efek neon */
 .neon-text {
   text-shadow: 0 0 3px #00ffee, 0 0 6px #00ffee, 0 0 10px #00ffee;
 }
 
+/* Efek api */
 .fire-effect {
   animation: fire 1s infinite alternate;
   text-shadow:
@@ -110,6 +126,7 @@ body {
   }
 }
 
+/* Tombol */
 #actionButton {
   background-color: #000;
   color: #00ffcc;
@@ -129,6 +146,7 @@ body {
   box-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
 }
 
+/* Responsif untuk layar besar */
 @media (min-width: 768px) {
   #clock {
     font-size: 6rem;
