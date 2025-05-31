@@ -21,16 +21,17 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
-// Efek Klik
+// Efek Klik pada container
 document.querySelector('.container').addEventListener('click', function() {
   this.style.backgroundColor = 'rgba(255, 0, 255, 0.3)';
   this.style.boxShadow = '0 0 30px rgba(255, 0, 255, 0.5)';
   setTimeout(() => {
-    this.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    this.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
     this.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.5)';
   }, 500);
 });
 
+// Tombol ACTIVATE
 document.getElementById('actionButton').addEventListener('click', function() {
   alert('SYSTEM ACTIVATED!');
   this.style.backgroundColor = '#ff00ff';
@@ -41,6 +42,7 @@ document.getElementById('actionButton').addEventListener('click', function() {
   }, 500);
 });
 
+// Hover welcome text
 document.getElementById('welcome').addEventListener('mouseover', function() {
   this.textContent = 'SYSTEM OVERRIDE...';
 });
@@ -49,7 +51,6 @@ document.getElementById('welcome').addEventListener('mouseout', function() {
 });
 
 const motivasi = [
-  // Kalimat motivasi lama + baru (jumlah 60)
   "Jangan takut badai, karena badai adalah jalan bagi elang untuk terbang lebih tinggi.",
   "Elang tidak sibuk membuktikan dirinya ke ayam. Fokusmu bukan menjawab keraguan, tapi terbang lebih tinggi.",
   "Terbanglah sendiri jika harus, asal tetap mendekati tujuanmu. Bukan keramaian yang menentukan nilai terbangmu.",
@@ -60,7 +61,6 @@ const motivasi = [
   "Kalau kamu ingin hasil luar biasa, jangan terbang dengan yang biasa-biasa saja.",
   "Terkadang hidup mendorongmu keluar dari sarang bukan untuk menjatuhkan, tapi agar kamu belajar terbang.",
   "Elang tak pernah khawatir badai datang — dia hanya menyiapkan sayap untuk naik lebih tinggi.",
-  // ... +50 motivasi tajam lainnya seperti sebelumnya
   "Elang tidak sibuk menjelaskan, ia membuktikan lewat ketinggian.",
   "Elang tidak bersaing di tanah, ia menguasai langitnya sendiri.",
   "Diamnya elang bukan lemah, itu fokus sebelum menerkam.",
@@ -70,12 +70,13 @@ const motivasi = [
   "Yang terlalu nyaman di sarang, tidak akan pernah tahu luasnya langit.",
   "Ketajaman bukan hanya pada paruhnya, tapi pada ketenangan dalam menyerang.",
   "Elang memilih waktu yang tepat, bukan keramaian yang bising.",
-  "Ketinggian membuat elang sendiri, tapi itulah harga kepemimpinan.",
-  // (Potong jika terlalu panjang. Kamu bisa tambah sisanya kembali dengan gaya sama)
+  "Ketinggian membuat elang sendiri, tapi itulah harga kepemimpinan."
 ];
 
+// Variabel untuk menghindari motivasi berulang langsung
 let lastIndex = -1;
 
+// Fungsi animasi ketik pada elemen
 function ketikMotivasi(teks, elemenId, kecepatan = 30) {
   const elemen = document.getElementById(elemenId);
   elemen.textContent = "";
@@ -90,6 +91,7 @@ function ketikMotivasi(teks, elemenId, kecepatan = 30) {
   ketik();
 }
 
+// Tampilkan motivasi random yang berbeda dari sebelumnya
 function tampilkanMotivasi() {
   let acak;
   do {
@@ -99,5 +101,6 @@ function tampilkanMotivasi() {
   ketikMotivasi(motivasi[acak], 'motivation');
 }
 
+// Tampilkan pertama kali dan update setiap 10 detik
 tampilkanMotivasi();
 setInterval(tampilkanMotivasi, 10000);
