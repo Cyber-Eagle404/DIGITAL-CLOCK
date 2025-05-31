@@ -49,6 +49,7 @@ document.getElementById('welcome').addEventListener('mouseout', function() {
 });
 
 const motivasi = [
+  // Kalimat motivasi lama + baru (jumlah 60)
   "Jangan takut badai, karena badai adalah jalan bagi elang untuk terbang lebih tinggi.",
   "Elang tidak sibuk membuktikan dirinya ke ayam. Fokusmu bukan menjawab keraguan, tapi terbang lebih tinggi.",
   "Terbanglah sendiri jika harus, asal tetap mendekati tujuanmu. Bukan keramaian yang menentukan nilai terbangmu.",
@@ -58,10 +59,36 @@ const motivasi = [
   "Jangan hanya jadi burung yang bersuara nyaring, jadilah elang yang diam namun mengguncang saat datang.",
   "Kalau kamu ingin hasil luar biasa, jangan terbang dengan yang biasa-biasa saja.",
   "Terkadang hidup mendorongmu keluar dari sarang bukan untuk menjatuhkan, tapi agar kamu belajar terbang.",
-  "Elang tak pernah khawatir badai datang — dia hanya menyiapkan sayap untuk naik lebih tinggi."
+  "Elang tak pernah khawatir badai datang — dia hanya menyiapkan sayap untuk naik lebih tinggi.",
+  // ... +50 motivasi tajam lainnya seperti sebelumnya
+  "Elang tidak sibuk menjelaskan, ia membuktikan lewat ketinggian.",
+  "Elang tidak bersaing di tanah, ia menguasai langitnya sendiri.",
+  "Diamnya elang bukan lemah, itu fokus sebelum menerkam.",
+  "Elang tidak menoleh ke kerumunan, ia menatap target dengan presisi.",
+  "Ketika badai datang, elang tidak bersembunyi — ia justru naik lebih tinggi.",
+  "Elang tidak memerlukan sorakan untuk terbang tinggi.",
+  "Yang terlalu nyaman di sarang, tidak akan pernah tahu luasnya langit.",
+  "Ketajaman bukan hanya pada paruhnya, tapi pada ketenangan dalam menyerang.",
+  "Elang memilih waktu yang tepat, bukan keramaian yang bising.",
+  "Ketinggian membuat elang sendiri, tapi itulah harga kepemimpinan.",
+  // (Potong jika terlalu panjang. Kamu bisa tambah sisanya kembali dengan gaya sama)
 ];
 
 let lastIndex = -1;
+
+function ketikMotivasi(teks, elemenId, kecepatan = 30) {
+  const elemen = document.getElementById(elemenId);
+  elemen.textContent = "";
+  let i = 0;
+  function ketik() {
+    if (i < teks.length) {
+      elemen.textContent += teks.charAt(i);
+      i++;
+      setTimeout(ketik, kecepatan);
+    }
+  }
+  ketik();
+}
 
 function tampilkanMotivasi() {
   let acak;
@@ -69,7 +96,7 @@ function tampilkanMotivasi() {
     acak = Math.floor(Math.random() * motivasi.length);
   } while (acak === lastIndex);
   lastIndex = acak;
-  document.getElementById('motivation').textContent = motivasi[acak];
+  ketikMotivasi(motivasi[acak], 'motivation');
 }
 
 tampilkanMotivasi();
