@@ -22,7 +22,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('lightning.gif.gif') no-repeat center center fixed;
+  background: url('lightning.gif') no-repeat center center fixed;
   background-size: cover;
   z-index: -2;
 }
