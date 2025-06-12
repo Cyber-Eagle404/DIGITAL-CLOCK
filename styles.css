@@ -22,7 +22,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('lightning.gif') no-repeat center center fixed;
+  background: url('Lightning.gif') no-repeat center center fixed;
   background-size: cover;
   z-index: -2;
 }
@@ -35,7 +35,7 @@ body::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('eagle.png.jpg') no-repeat center center fixed;
+  background: url('eagle.jpg') no-repeat center center fixed;
   background-size: cover;
   opacity: 0.15;
   z-index: -1;
