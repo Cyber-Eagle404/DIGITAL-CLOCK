@@ -1,4 +1,4 @@
-/* === BACKGROUND DENGAN GIF DAN OVERLAY === */
+/* ===== GLOBAL & BACKGROUND LAYERS ===== */
 body {
   margin: 0;
   padding: 0;
@@ -12,9 +12,10 @@ body {
   overflow: hidden;
   position: relative;
   background-color: #000;
+  z-index: 0; /* Base layer */
 }
 
-/* GIF PETIR */
+/* Lightning GIF (Backmost Layer) */
 body::before {
   content: "";
   position: fixed;
@@ -22,12 +23,13 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('Lightning.gif') no-repeat center center fixed;
+  background: url('Lightning.gif') no-repeat center center;
   background-size: cover;
   z-index: -2;
+  animation: lightning-flicker 5s infinite;
 }
 
-/* Gambar eagle transparan di atas petir */
+/* Eagle Image (Middle Layer) */
 body::after {
   content: "";
   position: fixed;
@@ -35,158 +37,100 @@ body::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('eagle.png') no-repeat center center fixed;
-  background-size: cover;
-  opacity: 0.15;
+  background: url('eagle.png') no-repeat center center;
+  background-size: contain; /* Changed to 'contain' for better visibility */
+  opacity: 0.3; /* Increased from 0.15 */
   z-index: -1;
+  pointer-events: none; /* Prevent interaction */
 }
 
-/* === KOTAK UTAMA === */
+@keyframes lightning-flicker {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+/* ===== MAIN CONTAINER ===== */
 .container {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.7); /* More transparent */
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #00ffcc;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  transition: all 0.3s ease;
   max-width: 90vw;
   backdrop-filter: blur(1px);
+  position: relative;
+  z-index: 1; /* Above all backgrounds */
+  transition: all 0.3s ease;
 }
 
-/* === TEKS JUDUL === */
+/* ===== ELEMENTS ENHANCEMENT ===== */
 #welcome {
   font-size: 1.5rem;
-  font-weight: bold;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 1.2;
   color: #00ffee;
-  transition: all 0.3s ease;
-}
-
-/* === JAM DIGITAL === */
-#clock {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ffffff;
-  transition: all 0.3s ease;
-}
-
-/* === TANGGAL === */
-.small-text {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #cccccc;
-  transition: all 0.3s ease;
-}
-
-/* === MOTIVASI === */
-#motivation {
-  font-family: 'Courier New', monospace;
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-style: italic;
-  color: #00ffcc;
-  border-left: 2px solid #00ffcc;
-  white-space: normal;
-  overflow: visible;
-  word-wrap: break-word;
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  padding-left: 15px;
-  animation: caret-blink 1s step-start infinite;
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-  transition: all 0.5s ease-in-out;
-}
-
-@keyframes caret-blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* === GLITCH EFEK === */
-.glitch {
-  position: relative;
+  text-shadow: 0 0 5px #00ffee;
   animation: glitch 2s infinite;
 }
 
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  60% { transform: translate(-2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-/* === NEON TEKS === */
-.neon-text {
-  text-shadow: 0 0 3px #00ffee, 0 0 6px #00ffee, 0 0 10px #00ffee;
-}
-
-/* === API EFEK PADA JAM DAN MOTIVASI === */
-.fire-effect {
-  animation: fire 1s infinite alternate;
-  text-shadow:
+#clock {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 
     0 0 10px #ff6f00,
-    0 0 20px #ff8f00,
-    0 0 30px #ffaa00,
-    0 0 40px #ffbb33;
+    0 0 20px #ff8f00;
+  animation: fire 1s infinite alternate;
 }
 
-@keyframes fire {
-  0% {
-    text-shadow:
-      0 0 10px #ff6f00,
-      0 0 20px #ff8f00,
-      0 0 30px #ffaa00,
-      0 0 40px #ffbb33;
-  }
-  100% {
-    text-shadow:
-      0 0 15px #ff3d00,
-      0 0 25px #ff6f00,
-      0 0 35px #ff9100,
-      0 0 45px #ffab40;
-  }
-}
-
-/* === TOMBOL AKSI === */
-#actionButton {
-  background-color: #000;
-  color: #00ffcc;
-  border: 2px solid #00ffcc;
-  padding: 10px 20px;
+#date {
   font-size: 1rem;
-  font-family: 'Courier New', Courier, monospace;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
+  color: #ccc;
+  text-shadow: 0 0 3px #00ffee;
+}
+
+/* ===== MOTIVATION BOX ===== */
+#motivation {
+  font-size: 1.2rem;
+  border-left: 2px solid #00ffcc;
+  padding-left: 15px;
+  animation: 
+    caret-blink 1s step-end infinite,
+    fire 1s infinite alternate;
+}
+
+/* ===== BUTTON ===== */
+#actionButton {
+  background: transparent;
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  transition: all 0.3s;
 }
 
 #actionButton:hover {
-  background-color: #00ffee;
+  background: #00ffcc;
   color: #000;
-  box-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+  box-shadow: 0 0 15px #00ffcc;
 }
 
-/* === RESPONSIF LAYAR BESAR === */
+/* ===== ANIMATIONS ===== */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); text-shadow: 0 0 5px #00ffee; }
+  20% { transform: translate(-2px, 2px); text-shadow: 0 0 10px #ff00ff; }
+  40% { transform: translate(2px, -2px); text-shadow: 0 0 10px #00ffff; }
+  60% { transform: translate(-3px, 1px); }
+  80% { transform: translate(3px, -1px); }
+}
+
+@keyframes fire {
+  0% { text-shadow: 0 0 10px #ff6f00; }
+  100% { text-shadow: 0 0 20px #ff3d00; }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (min-width: 768px) {
-  #clock {
-    font-size: 6rem;
-  }
-  #welcome {
-    font-size: 1.9rem;
-  }
-  #motivation {
-    font-size: 1.8rem;
-    max-width: 700px;
-  }
+  #clock { font-size: 6rem; }
+  #welcome { font-size: 1.9rem; }
+  #motivation { font-size: 1.5rem; }
 }
