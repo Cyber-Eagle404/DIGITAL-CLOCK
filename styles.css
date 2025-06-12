@@ -1,4 +1,4 @@
-/* ===== GLOBAL & BACKGROUND LAYERS ===== */
+/* ===== GLOBAL STYLES ===== */
 body {
   margin: 0;
   padding: 0;
@@ -12,10 +12,25 @@ body {
   overflow: hidden;
   position: relative;
   background-color: #000;
-  z-index: 0; /* Base layer */
+  z-index: 0;
 }
 
-/* Lightning GIF (Backmost Layer) */
+/* ===== BACKGROUND LAYERS ===== */
+/* Lightning Effect (Positioned lower) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('Lightning.gif') no-repeat center 70%;
+  background-size: cover;
+  z-index: -2;
+  animation: lightning-flicker 5s infinite;
+}
+
+/* Eagle Image */
 body::after {
   content: "";
   position: fixed;
@@ -30,30 +45,10 @@ body::after {
   pointer-events: none;
 }
 
-/* Eagle Image (Middle Layer) */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('eagle.png') no-repeat center center;
-  background-size: contain; /* Changed to 'contain' for better visibility */
-  opacity: 0.3; /* Increased from 0.15 */
-  z-index: -1;
-  pointer-events: none; /* Prevent interaction */
-}
-
-@keyframes lightning-flicker {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.3; }
-}
-
 /* ===== MAIN CONTAINER ===== */
 .container {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7); /* More transparent */
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #00ffcc;
@@ -61,16 +56,18 @@ body::after {
   max-width: 90vw;
   backdrop-filter: blur(1px);
   position: relative;
-  z-index: 1; /* Above all backgrounds */
+  z-index: 1;
   transition: all 0.3s ease;
 }
 
-/* ===== ELEMENTS ENHANCEMENT ===== */
+/* ===== TEXT ELEMENTS ===== */
 #welcome {
   font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  line-height: 1.2;
   color: #00ffee;
   text-shadow: 0 0 5px #00ffee;
   animation: glitch 2s infinite;
@@ -78,7 +75,9 @@ body::after {
 
 #clock {
   font-size: 3.5rem;
-  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
   text-shadow: 
     0 0 10px #ff6f00,
     0 0 20px #ff8f00;
@@ -87,15 +86,23 @@ body::after {
 
 #date {
   font-size: 1rem;
-  color: #ccc;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #cccccc;
   text-shadow: 0 0 3px #00ffee;
 }
 
 /* ===== MOTIVATION BOX ===== */
 #motivation {
+  font-family: 'Courier New', monospace;
   font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #00ffcc;
   border-left: 2px solid #00ffcc;
   padding-left: 15px;
+  margin: 20px auto;
+  max-width: 600px;
   animation: 
     caret-blink 1s step-end infinite,
     fire 1s infinite alternate;
@@ -103,23 +110,34 @@ body::after {
 
 /* ===== BUTTON ===== */
 #actionButton {
-  background: transparent;
-  border: 2px solid #00ffcc;
+  background-color: transparent;
   color: #00ffcc;
-  transition: all 0.3s;
+  border: 2px solid #00ffcc;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 #actionButton:hover {
-  background: #00ffcc;
+  background-color: #00ffee;
   color: #000;
-  box-shadow: 0 0 15px #00ffcc;
+  box-shadow: 0 0 15px #00ffee;
 }
 
 /* ===== ANIMATIONS ===== */
+@keyframes lightning-flicker {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
 @keyframes glitch {
-  0%, 100% { transform: translate(0); text-shadow: 0 0 5px #00ffee; }
-  20% { transform: translate(-2px, 2px); text-shadow: 0 0 10px #ff00ff; }
-  40% { transform: translate(2px, -2px); text-shadow: 0 0 10px #00ffff; }
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
   60% { transform: translate(-3px, 1px); }
   80% { transform: translate(3px, -1px); }
 }
@@ -129,9 +147,16 @@ body::after {
   100% { text-shadow: 0 0 20px #ff3d00; }
 }
 
-/* ===== RESPONSIVE ===== */
+@keyframes caret-blink {
+  50% { border-color: transparent; }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (min-width: 768px) {
   #clock { font-size: 6rem; }
   #welcome { font-size: 1.9rem; }
-  #motivation { font-size: 1.5rem; }
+  #motivation { 
+    font-size: 1.5rem;
+    max-width: 700px;
+  }
 }
