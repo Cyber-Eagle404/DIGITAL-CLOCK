@@ -16,17 +16,18 @@ body {
 }
 
 /* Lightning GIF (Backmost Layer) */
-body::before {
+body::after {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('Lightning.gif') no-repeat center center;
-  background-size: cover;
-  z-index: -2;
-  animation: lightning-flicker 5s infinite;
+  background: url('eagle.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.3;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Eagle Image (Middle Layer) */
